@@ -12,6 +12,9 @@ public class Persecucion : MonoBehaviour
     private Animator anim;
     public bool estaEncendido=false;
     public GameObject gameover;
+    public AudioSource screamer;
+    public AudioClip clip; 
+
     //public GameObject zombie;
 
 
@@ -30,7 +33,7 @@ public class Persecucion : MonoBehaviour
             anim.SetFloat("Blend",1.0f);
             transform.LookAt(new Vector3(jugador.position.x,transform.position.y,jugador.position.z));
             transform.position = Vector3.MoveTowards(transform.position,new Vector3(jugador.position.x,transform.position.y,jugador.position.z),veloci*Time.deltaTime);
-            
+            screamer.PlayOneShot(clip);
         }
         else
         {
@@ -49,6 +52,9 @@ public class Persecucion : MonoBehaviour
         }
         
 
+    }
+    private void OnTriggerEnter(GameObject zom) {
+        Destroy(zom);
     }
    
    
