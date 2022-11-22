@@ -9,6 +9,7 @@ TagManager:
   - TriggerDoor
   - CuadroTag
   - Katana
+  - katana
   layers:
   - Default
   - TransparentFX
