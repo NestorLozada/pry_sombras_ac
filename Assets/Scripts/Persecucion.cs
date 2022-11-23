@@ -46,20 +46,17 @@ public class Persecucion : MonoBehaviour
      private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player"){
             gameover.SetActive(true);
-            //SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver");
         
         }
         if (other.tag == "katana"){
            Destroy(this.gameObject);
-          // SceneManager.LoadScene("GameOver");
+          SceneManager.LoadScene("GameOver");
         }
         
 
     }
-    private void OnTriggerEnter(GameObject zom) {
-        Destroy(zom);
-        //SceneManager.LoadScene("GameOver");
-    }
+
    
    
 }
