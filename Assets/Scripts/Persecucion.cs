@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Persecucion : MonoBehaviour
 {
@@ -45,16 +46,19 @@ public class Persecucion : MonoBehaviour
      private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player"){
             gameover.SetActive(true);
+            //SceneManager.LoadScene("GameOver");
         
         }
         if (other.tag == "katana"){
            Destroy(this.gameObject);
+          // SceneManager.LoadScene("GameOver");
         }
         
 
     }
     private void OnTriggerEnter(GameObject zom) {
         Destroy(zom);
+        //SceneManager.LoadScene("GameOver");
     }
    
    
